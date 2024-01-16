@@ -32,7 +32,8 @@ export class ItemComponent implements OnInit, OnChanges {
 - prejudica o uso -> quantidade de vezes chamada
   - pode prejudicar performace
 
-
+# 4) OnDestoy
+- chamado quando remove um componetne da tela
 # Comunicação entre componentes
 Comunicação de filho pra pai e de pai pra filho
 

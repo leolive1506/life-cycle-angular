@@ -27,7 +27,6 @@ export class AppComponent implements OnInit, DoCheck {
   }
 
   deleteItem(item: Item) {
-    console.log('oi')
     this.service.delete(item)
   }
 }
