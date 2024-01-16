@@ -33,16 +33,21 @@ export class ListaDeCompraService {
   addItemLista(nome: string) {
     const item = this.criarItem(nome)
     this.listaDeCompra.push(item)
-    this.atualizarLocalStorage()
+    // this.atualizarLocalStorage()
   }
 
   updateTitleItem(item: Item, nome: string) {
     const index = this.listaDeCompra.indexOf(item)
     this.listaDeCompra[index].nome = nome
-    this.atualizarLocalStorage()
+    // this.atualizarLocalStorage()
   }
 
   atualizarLocalStorage() {
     localStorage.setItem('items', JSON.stringify(this.listaDeCompra));
+  }
+
+  delete(item: Item) {
+    const index = this.listaDeCompra.indexOf(item)
+    this.listaDeCompra.splice(index, 1)
   }
 }

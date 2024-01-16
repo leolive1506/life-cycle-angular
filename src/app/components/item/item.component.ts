@@ -10,6 +10,7 @@ import { Item } from 'src/app/interfaces/iItem';
 export class ItemComponent implements OnInit, OnChanges {
   @Input() item!: Item
   @Output() emitindoItemParaEditar = new EventEmitter()
+  @Output() emmitDelete = new EventEmitter()
 
   faPen = faPen;
   faTrash = faTrash
@@ -24,5 +25,13 @@ export class ItemComponent implements OnInit, OnChanges {
 
   editarClick() {
     this.emitindoItemParaEditar.emit(this.item)
+  }
+
+  deleteClick() {
+    this.emmitDelete.emit(this.item)
+  }
+
+  check() {
+    this.item.comprado = !this.item.comprado
   }
 }

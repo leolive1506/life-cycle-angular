@@ -24,6 +24,15 @@ export class ItemComponent implements OnInit, OnChanges {
 - chamado quando componente está com suas **propriedades carregadas** e pouco depois de ser exibido em tela.
 - chamado apenas uma vez
 
+# 3) DoCheck
+- semelhante onChange
+  - porém onChange detecta somente alterações no componente de entrada
+- verifica qualquer alteração no componente
+  - propriedade alterada, chamada função, alterações componente filho
+- prejudica o uso -> quantidade de vezes chamada
+  - pode prejudicar performace
+
+
 # Comunicação entre componentes
 Comunicação de filho pra pai e de pai pra filho
 
