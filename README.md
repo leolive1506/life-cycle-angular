@@ -23,3 +23,12 @@ export class ItemComponent implements OnInit, OnChanges {
 # 2) onInit
 - chamado quando componente está com suas **propriedades carregadas** e pouco depois de ser exibido em tela.
 - chamado apenas uma vez
+
+# Comunicação entre componentes
+Comunicação de filho pra pai e de pai pra filho
+
+## @Output()
+- Comunicação de filho para pai
+
+## @Input()
+- Comunicação de pai para filho
