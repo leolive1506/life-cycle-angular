@@ -9,6 +9,8 @@ import { ListaDeCompraService } from 'src/app/service/lista-de-compra.service';
 })
 export class InputComponent implements OnInit, OnChanges {
   @Input() itemQueVaiSerEditado!: Item
+  editando = false
+  textoBtn = 'Salvar item'
   valorItem!: string;
 
   constructor(private service: ListaDeCompraService) { }
@@ -19,12 +21,21 @@ export class InputComponent implements OnInit, OnChanges {
     // console.log(changes['itemQueVaiSerEditado'].currentValue)
     if (!changes['itemQueVaiSerEditado'].firstChange) {
       this.valorItem = this.itemQueVaiSerEditado?.nome
+      this.editando = true;
+      this.textoBtn = 'Editar item'
     }
   }
 
   adicionarItem() {
     this.service.addItemLista(this.valorItem)
     this.limparCampo()
+  }
+
+  atualizarItem() {
+    this.service.updateTitleItem(this.itemQueVaiSerEditado!, this.valorItem)
+    this.limparCampo()
+    this.editando = false
+    this.textoBtn = 'Salvar item'
   }
 
   limparCampo() {

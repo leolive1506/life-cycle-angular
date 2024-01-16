@@ -51,4 +51,9 @@ export class ListaDeCompraService {
     const item = this.criarItem(nome)
     this.listaDeCompra.push(item)
   }
+
+  updateTitleItem(item: Item, nome: string) {
+    const index = this.listaDeCompra.indexOf(item)
+    this.listaDeCompra[index].nome = nome
+  }
 }
