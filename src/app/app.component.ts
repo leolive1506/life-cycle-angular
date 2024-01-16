@@ -29,4 +29,8 @@ export class AppComponent implements OnInit, DoCheck {
   deleteItem(item: Item) {
     this.service.delete(item)
   }
+
+  limparLista() {
+    this.listaDeCompra = []
+  }
 }

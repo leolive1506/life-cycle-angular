@@ -34,6 +34,8 @@ export class ItemComponent implements OnInit, OnChanges {
 
 # 4) OnDestoy
 - chamado quando remove um componetne da tela
+- varios observables podem estar sendo observados, se não cancelar o angular ficara escutando e consumindo recursos de memória
+  - Chamado **Memory leaky**
 # Comunicação entre componentes
 Comunicação de filho pra pai e de pai pra filho
 
